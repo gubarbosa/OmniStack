@@ -3,27 +3,126 @@
 body {
     background: #e5e5e5;
     color: #25282B;
-    text-align: center;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hide {
+    display: none;
+}
+
+p, .description {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+}
+
+a {
+    color: #ff5e84;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#container {
+    max-width: 980px;
+    width: 90%;
+
+    margin: 32px auto;
+    display: flex;
+}
+
+#intro {
+    width: 300px;
+    margin-right: 30px;
+}
+
+main {
+    margin: 32px 0;
+}
+
+#buttons {
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 14px;
 }
 
 button {
     border: none;
     color: #ff5e84;
     background: none;
-    font-weight: bold;         
+    cursor: pointer;
+    outline: none;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
            
 }
 
-.fat {
-    background: #ff5e84;
-    color: white;
+button:hover {
+    text-decoration: underline;
 }
 
-#footer a {
-    color: #25282B;
+button.fat {
+    background: #ff5e84;
+    color: white;
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(255, 0, 92, 0.16);
+}
+
+button.fat:hover {
     text-decoration: none;
 }
 
-.hide {
-    display: none;
+
+footer {
+    text-align: center;
+    font-weight: regular;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    color: #777;
+}
+
+footer a {
+    opacity: 0.7;
+}
+#last-ideias a {
+    margin-left: 376px;
+}
+
+.ideia {
+    display: flex;
+    background: white;
+    margin-bottom: 32px;
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px -8px rgba(1,1,1,0.2);
+}
+
+.ideia img {
+    height: 60px;
+    width: 60px;
+    margin: 0px 32px 0px 0px;
+
+}
+
+.ideia p {
+    margin: 8px 0;
+    color:#777;
+}
+
+.ideia h3 {
+    margin: 0px;
+}
+
+.ideia .description {
+    margin: 16px 0px;
 }
