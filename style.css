@@ -1,10 +1,15 @@
 /*CSS*/
 
+/*GLOBAIS*/
 body {
     background: #e5e5e5;
     color: #25282B;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
+}
+
+body.hideScroll {
+    overflow: hidden;
 }
 
 p, .description {
@@ -23,6 +28,38 @@ a:hover {
     text-decoration: underline;
 }
 
+.button {
+    background: #ff5e84;
+    color: white;
+    width: 150px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(255, 0, 92, 0.16);
+}
+
+.button:hover {
+    text-decoration: none;
+    background-color: #0943e3
+}
+
+#page-ideas nav li:last-child a {
+    
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    border-radius: 8px;
+}
+
+
+/*Padrão*/
+
 #container {
     max-width: 980px;
     width: 90%;
@@ -33,7 +70,7 @@ a:hover {
 
 #intro {
     width: 300px;
-    margin-right: 30px;
+    margin-right: 64px;
 }
 
 main {
@@ -57,26 +94,11 @@ button {
     font-size: 14px;
     line-height: 18px;
     letter-spacing: 0.2px;
-           
 }
 
 button:hover {
     text-decoration: underline;
 }
-
-button.fat {
-    background: #ff5e84;
-    color: white;
-    width: 150px;
-    height: 40px;
-    border-radius: 10px;
-    box-shadow: 0px 8px 16px rgba(255, 0, 92, 0.16);
-}
-
-button.fat:hover {
-    text-decoration: none;
-}
-
 
 footer {
     text-align: center;
@@ -91,7 +113,7 @@ footer a {
     opacity: 0.7;
 }
 #last-ideias a {
-    margin-left: 376px;
+    margin: 0;
 }
 
 .ideia {
@@ -123,19 +145,26 @@ footer a {
     margin: 16px 0px;
 }
 
+
 /*MODAL*/
 #modal {
     background: #ff5e84;
     position: absolute;
     top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: center;
-    width: 100vw;
-    height: 100vw;
+    transition: 400ms;
+}
+
+#modal.addScroll {
+    overflow: auto;
 }
 
 #modal .content {
-    margin-top: 128px;
+    margin-top: 15%;
     color: white;
 }
 
@@ -153,6 +182,7 @@ form button {
     margin-top: 32px;
     grid-column: 2;
     justify-self: end;
+    transition: 400ms;
 }
 
 form button:hover {
@@ -162,17 +192,21 @@ form button:hover {
 }
 
 form a {
-    background-color: white;
-    color: black;
+    background-color: #ffffff22;
+    display: flex;
+    color: white;
     cursor: pointer;
     border: none;
     border-radius: 6px;
-    width: 100px;
-    height: 20px;
-    text-align: center;
+    width: 150px;
+    height: 40px;
     margin-top: 32px;
     font-size: 14px;
     font-weight: bold;
+    align-self: end;
+    justify-content: center;
+    align-items: center;
+    transition: 400ms;
 }
 
 form a:hover {
@@ -183,7 +217,7 @@ form a:hover {
 #modal form {
     max-width: 800px;
     width: 80%;
-    margin: 0 auto;
+    margin: 0 auto 15%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap:20px;
@@ -212,6 +246,71 @@ form label {
 }
 
 #modal.hide {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
 }
 
+/*IDEAS.HTML*/
+
+#page-ideas #container{
+    display: block;
+    max-width: 980px;
+    width: 90%;
+
+    margin: 32px auto;
+}
+
+#page-ideas header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#page-ideas nav {
+    display: flex;
+    align-items: center;
+}
+
+#page-ideas nav li {
+    list-style-type: none;
+    margin-right: 16px;
+}
+
+#page-ideas nav li a.button {
+    color: white
+}
+
+#page-ideas nav li:last-child {
+    margin: 0;
+}
+
+
+section#title {
+    text-align: center;
+    margin: 64px 0px;
+}
+
+section#title p {
+    opacity: 0.7;
+    margin: 0;
+}
+
+section#title h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+section#ideas { 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;   
+}
+
+section#ideas .ideia {
+    margin: 0;
+}
+
+section#title,
+section#ideas,
+footer {
+    margin-top: 64px;
+}
