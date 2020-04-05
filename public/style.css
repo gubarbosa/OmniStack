@@ -149,7 +149,7 @@ footer a {
 /*MODAL*/
 #modal {
     background: #ff5e84;
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;

@@ -7,17 +7,40 @@
 const express = require("express")
 const server = express()
 
+
+const ideias = [
+    {
+        img = "",
+        title = "",
+        category = "",
+        description = "",
+        url = "",
+    }
+]
+
+
+
 // configurar arquivos estáticos(css, scripts, imagens)
 server.use(express.static("public"))
+
+//configurar nunjucks
+const nunjucks = require("nunjucks")
+nunjucks.configure("views", {
+    express: server,
+    noCache: true, // boolean
+})
 
 // criei uma rota /
 // e capturo o pedido do cliente para responder
 server.get("/", function(req, res) {
-    return res.sendFile(__dirname + "/index.html")
+    const h1 = "OI DO BACKEND"
+    return res.render("index.html", { title: h1 })
 })
 
+
+
 server.get("/ideias", function(req, res) {
-    return res.sendFile(__dirname + "/ideias.html")
+    return res.render("ideias.html")
 })
 
 
