@@ -1,61 +1,42 @@
-<!DOCTYPE html>
+{% extends "layout.html" %}
 
-<html>
-<!--TAG HTML-->
+{% block content %}
+<section id="intro">
 
-<head>
-    <!-- CONFIGURAÇÕES DA PÁGINA-->
-    <meta charset="utf-8">
-    <title>Casa Criativa</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,900&display=swap" rel="stylesheet">
-</head>
+    <header>
+        <a href="/">
+            <img src="img/casa_criativa.png" alt="Logo-Casa-Criativa">
+        </a>
+    </header>
 
-<body>
-    <h1>{{title}}</h1>
-    <div id="container">
+    <main>
 
-        <section id="intro">
+        <p>Ficar em casa em períodos longos, não deve ser nada fácil.</p>
 
-            <header>
-                <a href="/">
-                    <img src="img/casa_criativa.png" alt="Logo-Casa-Criativa">
-                </a>
-            </header>
+        <p>Iremos catalogar ideias, <strong>brincadeiras, jogos, filmes, livros, cursos, dicas</strong> e tudo
+            que
+            for necessário para tornar esse momento mais interessante.</p>
 
-            <main>
+        <p>Comece clicando em ver ideias para ver as ideias cadastradas e contribua adicioando a sua ideia.</p>
 
-                <p>Ficar em casa em períodos longos, não deve ser nada fácil.</p>
+    </main>
 
-                <p>Iremos catalogar ideias, <strong>brincadeiras, jogos, filmes, livros, cursos, dicas</strong> e tudo
-                    que
-                    for necessário para tornar esse momento mais interessante.</p>
+    <section id="buttons">
+        <button onclick="onOff()">+ Adicionar Ideia</button>
+        <a href="ideias" class="button">+ Ver Ideias</a>
 
-                <p>Comece clicando em ver ideias para ver as ideias cadastradas e contribua adicioando a sua ideia.</p>
+    </section>
 
-            </main>
+    <footer>
+        Com ❤ <a href="http://rocketseat.com.br" target="_blank">Rocketseat</a>
+    </footer>
 
-            <section id="buttons">
-                <button onclick="onOff()">+ Adicionar Ideia</button>
-                <a href="ideias" class="button">+ Ver Ideias</a>
+</section>
 
-            </section>
+<section id="last-ideias">
 
-            <footer>
-                Com ❤ <a href="http://rocketseat.com.br" target="_blank">Rocketseat</a>
-            </footer>
+{% include "all_ideas.html" %}
 
-        </section>
+</section>
 
-        <section id="last-ideias">
-        {% include "all_ideas.html" %}
-        </section>
-
-    </div>
-
-    {% include "modal.html" %}
-
-    <script src="scripts.js"></script>
-</body>
-
-</html>
+{% endblock %}

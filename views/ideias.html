@@ -1,39 +1,33 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,900&display=swap" rel="stylesheet">
+{% extends "layout.html" %}
+
+{% block title %}
     <title>Ideias - Casa Criativa</title>
-</head>
-<body id="page-ideas">
-    <div id="container">
-        <header>
-            <a href="/">
-                <img src="img/casa_criativa.png" alt="Casa-Criativa">
-            </a>
-            <nav>
-                <li><a href="/">Início</a></li>
-                <li><a class="button" href="#" onclick="onOff()">Nova Ideia</a></li>
-            </nav>
-        </header>
+{% endblock %}
 
-        <section id="title">
-            <p>em exibição</p>
-            <h1>Ideias</h1>
-        </section>
+{% set bodyId = "page-ideas" %}
 
-        <section id="ideas">
-            {% include "all_ideas.html" %}
-        </section>
+{% block content %}
+<header>
+    <a href="/">
+        <img src="img/casa_criativa.png" alt="Casa-Criativa">
+    </a>
+    <nav>
+        <li><a href="/">Início</a></li>
+        <li><a class="button" href="#" onclick="onOff()">Nova Ideia</a></li>
+    </nav>
+</header>
 
-        <footer>
-            Com ❤ <a href="http://rocketseat.com.br" target="_blank">Rocketseat</a> 
-        </footer>
+<section id="title">
+    <p>em exibição</p>
+    <h1>Ideias</h1>
+</section>
 
-        {% include "modal.html" %}
+<section id="ideas">
+    {% include "all_ideas.html" %}
+</section>
 
-        <script src="scripts.js"></script>
+<footer>
+    Com ❤ <a href="http://rocketseat.com.br" target="_blank">Rocketseat</a> 
+</footer>
 
-    </div>
-</html>
+{% endblock %}
