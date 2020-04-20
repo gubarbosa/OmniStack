@@ -16,24 +16,24 @@ db.serialize(function() {
     `)
 
 
-    // Inserir dados na tabela
-    // const query = `
-    //     INSERT INTO ideas(
-    //         image,
-    //         title,
-    //         category,
-    //         description,
-    //         link
-    //     ) VALUES (?,?,?,?,?);
-    // `
+    ;//Inserir dados na tabela
+    const query = `
+        INSERT INTO ideas(
+            image,
+            title,
+            category,
+            description,
+            link
+        ) VALUES (?,?,?,?,?);
+    `
 
-    // const values = [
-    //     "https://image.flaticon.com/icons/svg/2729/2729007.svg",
-    //     "Cursos de Programação",
-    //     "Estudo",
-    //     "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus quis est totam itaque earum",
-    //     "https://rocketseat.com.br"
-    // ]
+    const values = [
+        "https://image.flaticon.com/icons/svg/2729/2729007.svg",
+        "Cursos de Programação",
+        "Estudo",
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus quis est totam itaque earum",
+        "https://rocketseat.com.br"
+    ]
 
     // db.run(query, values, function(err) {
     //     if (err) return console.log(err)
@@ -43,13 +43,13 @@ db.serialize(function() {
 
     //Consultar dados na tabela
 
-    // db.all(`SELECT * FROM ideas`, function(err, rows) {
-    //     if (err) return console.log(err)
+    db.all(`SELECT * FROM ideas`, function(err, rows) {
+        if (err) return console.log(err)
 
-    //     console.log(rows)
-    // })
+        console.log(rows)
+    })
 
-    // Deletar um dado da tabela
+    ///Deletar um dado da tabela
     // db.run(`DELETE FROM ideas WHERE id = ?`, [1], function(err) {
     //     if (err) return console.log(err)
 
